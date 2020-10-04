@@ -47,6 +47,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  font-family: var(--font-mono);
+  font-weight: 600;
 }
 .draftBadge {
   border-radius: 16px;
@@ -72,6 +74,12 @@
   border-bottom: none;
 }
 
+.post, .postPreview {
+  padding-left: 24px;
+  background-color: white;
+  border: 1px solid #f0f1f1;
+}
+
 .postPreview h3,
 .post h1 {
   margin-bottom: 0;
@@ -82,12 +90,11 @@
 }
 
 .post :global(h2),
+
 .post :global(h3) {
   margin: 3rem 0 1.5rem 0;
 }
 
-.post :global(video),
-.post :global(img),
 .post :global(.asset-wrapper) {
   margin: 2rem auto;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
@@ -120,13 +127,26 @@
 }
 
 .postPreview :global(.posted) {
-  margin-bottom: 0.5em;
+  color: #6f8383;
+  font-family: var(--font-mono);
+  margin: 1rem 0 1rem;
+}
+
+.post :global(.posted) {
+  color: #6f8383;
+  font-family: var(--font-mono);
+  margin: 1rem 0 1rem;
 }
 
 .post {
   max-width: calc(600px + 10%);
   margin: 0 auto;
   padding: 5%;
+}
+
+.post :global(ul, li) {
+  color: #555;
+  line-height: 1.7;
 }
 
 .post :global(hr) {

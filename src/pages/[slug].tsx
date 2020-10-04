@@ -1,17 +1,17 @@
 import Link from 'next/link'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
-import Header from '../../components/header'
-import Heading from '../../components/heading'
-import components from '../../components/dynamic'
+import Header from '../components/header'
+import Heading from '../components/heading'
+import components from '../components/dynamic'
 import ReactJSXParser from '@zeit/react-jsx-parser'
-import blogStyles from '../../styles/blog.module.css'
-import { textBlock } from '../../lib/notion/renderers'
-import getPageData from '../../lib/notion/getPageData'
+import blogStyles from '../styles/blog.module.css'
+import { textBlock } from '../lib/notion/renderers'
+import getPageData from '../lib/notion/getPageData'
 import React, { CSSProperties, useEffect } from 'react'
-import getBlogIndex from '../../lib/notion/getBlogIndex'
-import getNotionUsers from '../../lib/notion/getNotionUsers'
-import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import getBlogIndex from '../lib/notion/getBlogIndex'
+import getNotionUsers from '../lib/notion/getNotionUsers'
+import { getBlogLink, getDateStr } from '../lib/blog-helpers'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -151,13 +151,10 @@ const RenderPost = ({ post, redirect, preview }) => {
         </div>
       )}
       <div className={blogStyles.post}>
-        <h1>{post.Page || ''}</h1>
-        {post.Authors.length > 0 && (
-          <div className="authors">By: {post.Authors.join(' ')}</div>
-        )}
         {post.Date && (
-          <div className="posted">Posted: {getDateStr(post.Date)}</div>
+          <div className="posted">{getDateStr(post.Date)}</div>
         )}
+        <h1>{post.Page || ''}</h1>
 
         <hr />
 
