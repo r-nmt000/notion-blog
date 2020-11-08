@@ -1,3 +1,11 @@
+.blogIndex {
+  padding: 0 5%;
+}
+
+.blogIndex h1 {
+  margin-bottom: 50px;
+}
+
 .previewAlertContainer {
   display: flex;
   justify-content: center;
@@ -35,12 +43,45 @@
   cursor: pointer;
 }
 
+.titleContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.draftBadge {
+  border-radius: 16px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 2px 7px;
+  margin-right: 6px;
+}
+
+.noPosts {
+  text-align: center;
+}
+
+.postPreview {
+  max-width: 600px;
+  margin: 10px auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.postPreview:last-child {
+  border-bottom: none;
+}
+
 .post, .postPreview {
   padding-left: 24px;
+  padding-right: 24px;
   background-color: white;
   border: 1px solid #f0f1f1;
 }
 
+.postPreview h3,
 .post h1 {
   margin-bottom: 0;
 }

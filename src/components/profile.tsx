@@ -1,5 +1,5 @@
 import sharedStyles from '../styles/shared.module.css'
-import blogStyles from '../styles/blog.module.css'
+import blogListStyles from '../styles/bloglist.module.css'
 import profileStyles from '../styles/profile.module.css'
 import Twitter from './svgs/twitter'
 import Github from './svgs/github'
@@ -7,8 +7,8 @@ import Github from './svgs/github'
 export default () => {
 
   return (
-    <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-      <div className={blogStyles.postPreview}>
+    <div className={`${sharedStyles.layout} ${blogListStyles.blogIndex}`}>
+      <div className={blogListStyles.postPreview}>
         <h3 className={profileStyles.header}>Profile</h3>
         <div className={profileStyles.container}>
           <div className={profileStyles.imageContainer}>

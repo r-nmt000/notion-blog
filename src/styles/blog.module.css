@@ -64,23 +64,12 @@
   text-align: center;
 }
 
-.postPreview {
-  max-width: 600px;
-  margin: 10px auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.postPreview:last-child {
-  border-bottom: none;
-}
-
 .post, .postPreview {
   padding-left: 24px;
   background-color: white;
   border: 1px solid #f0f1f1;
 }
 
-.postPreview h3,
 .post h1 {
   margin-bottom: 0;
 }
@@ -124,12 +113,6 @@
 
 .post :global(.underline) {
   text-decoration: underline;
-}
-
-.postPreview :global(.posted) {
-  color: #6f8383;
-  font-family: var(--font-mono);
-  margin: 1rem 0 1rem;
 }
 
 .post :global(.posted) {

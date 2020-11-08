@@ -3,6 +3,7 @@ import Header from '../components/header'
 import Profile from '../components/profile'
 
 import blogStyles from '../styles/blog.module.css'
+import blogListStyles from '../styles/bloglist.module.css'
 import sharedStyles from '../styles/shared.module.css'
 
 import {
@@ -70,7 +71,7 @@ export default ({ posts = [], preview }) => {
         )}
         {posts.map(post => {
           return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
+            <div className={blogListStyles.postPreview} key={post.Slug}>
               <h3>
                 <Link href="/[slug]" as={getBlogLink(post.Slug)}>
                   <div className={blogStyles.titleContainer}>
