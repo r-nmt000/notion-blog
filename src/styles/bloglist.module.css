@@ -47,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 .draftBadge {
@@ -129,13 +129,13 @@
 
 .postPreview :global(.posted) {
   color: #6f8383;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   margin: 1rem 0 1rem;
 }
 
 .post :global(.posted) {
   color: #6f8383;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   margin: 1rem 0 1rem;
 }
 

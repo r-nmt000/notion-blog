@@ -230,7 +230,7 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'page':
               break;
             case 'divider':
-              toRender.push(<hr/>);
+              toRender.push(<div className={blogStyles.divider}></div>);
               break;
             case 'text':
               if (properties) {
