@@ -5,6 +5,7 @@ import Header from '../components/header'
 import Heading from '../components/heading'
 import components from '../components/dynamic'
 import ReactJSXParser from '@zeit/react-jsx-parser'
+import blogStyles from '../styles/blog.module.css'
 import blogListStyles from '../styles/bloglist.module.css'
 import { textBlock } from '../lib/notion/renderers'
 import getPageData from '../lib/notion/getPageData'
@@ -128,7 +129,7 @@ const RenderPost = ({ post, redirect, preview }) => {
   // loading one from fallback then  redirect back to the index
   if (!post) {
     return (
-      <div className={blogListStyles.post}>
+      <div className={blogStyles.post}>
         <p>
           Woops! didn't find that post, redirecting you back to the blog index
         </p>
@@ -150,7 +151,7 @@ const RenderPost = ({ post, redirect, preview }) => {
           </div>
         </div>
       )}
-      <div className={blogListStyles.post}>
+      <div className={blogStyles.post}>
         {post.Date && (
           <div className="posted">{getDateStr(post.Date)}</div>
         )}

@@ -155,11 +155,13 @@
 }
 
 .post :global(a) {
+  text-decoration: underline;
   color: var(--accents-3);
 }
 
 .post :global(a:hover) {
   cursor: pointer;
+  text-decoration: underline;
   color: var(--accents-1);
 }
 
