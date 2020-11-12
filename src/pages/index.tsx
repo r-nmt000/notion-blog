@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Header from '../components/header'
 import Profile from '../components/profile'
-
 import blogStyles from '../styles/blog.module.css'
 import blogListStyles from '../styles/bloglist.module.css'
 import sharedStyles from '../styles/shared.module.css'
@@ -95,8 +94,8 @@ export default ({ posts = [], preview }) => {
             </div>
           )
         })}
+        <Profile/>
       </div>
-      <Profile/>
     </>
   )
 }
