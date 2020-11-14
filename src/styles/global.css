@@ -347,7 +347,8 @@ pre :global(code) {
 }
 
 li {
-    padding: 3px 2px;
+  padding: 3px 2px;
+  font-size: 0.94rem;
 }
 
 code {
