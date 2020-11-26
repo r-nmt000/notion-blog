@@ -235,6 +235,8 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'text':
               if (properties) {
                 toRender.push(textBlock(properties.title, false, id))
+              } else {
+                toRender.push(<div className={blogStyles.spacing}></div>);
               }
               break
             case 'image':

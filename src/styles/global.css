@@ -317,6 +317,14 @@ h2 {
   letter-spacing: -0.02rem;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 1.17rem;
+  letter-spacing: -0.02rem;
+  margin-top: 1rem;
+  margin-bottom: 1px;
+}
+
 .video {
   width: 1080px;
   max-width: calc(100vw - 40px);
@@ -337,6 +345,8 @@ p {
   font-weight: 400;
   font-size: 0.94rem;
   line-height: 1.7;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 pre {
   white-space: pre;
