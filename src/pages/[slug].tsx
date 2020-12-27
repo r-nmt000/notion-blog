@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
 import Header from '../components/header'
 import Heading from '../components/heading'
 import components from '../components/dynamic'
@@ -410,15 +409,6 @@ const RenderPost = ({ post, redirect, preview }) => {
               }
               break
             }
-            case 'tweet':
-              const tweetUrl = properties.source[0][0]
-              const pos = tweetUrl.indexOf('?')
-              let tweetId = tweetUrl.substring(0, pos).split('/')[5]
-              if (!tweetId) {
-                tweetId = tweetUrl.split('/')[5]
-              }
-              toRender.push(<TwitterTweetEmbed key={id} tweetId={tweetId} options={{ margin: '0 auto;' }} />)
-              break
             default:
               if (
                 process.env.NODE_ENV !== 'production' &&
