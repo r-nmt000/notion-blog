@@ -114,7 +114,7 @@
 
 .post {
   max-width: calc(700px + 10%);
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   padding: 5%;
 }
 
@@ -150,4 +150,20 @@
 
 .spacing {
   height: 20px;
+}
+.mainContainer {
+  display: flex;
+}
+
+@media (max-width: 787px) {
+  .sideShareButtonsContainer {
+    display: none;
+  }
+}
+.sideShareButtonsContainer {
+  height: fit-content;
+  top: 100px;
+  position: sticky;
+  margin-left: auto;
+  margin-right: 24px;
 }
