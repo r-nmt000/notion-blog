@@ -13,6 +13,7 @@ import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../lib/notion/getBlogIndex'
 import getNotionUsers from '../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../lib/blog-helpers'
+import { BASE_BLOG_URL } from '../lib/notion/server-constants'
 import ShareButtons from '../components/share-buttons'
 
 // Get the data for each blog post
@@ -27,7 +28,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
     console.log(`Failed to find post for slug: ${slug}`)
     return {
       props: {
-        redirect: '/blog',
+        redirect: '/',
         preview: false,
       },
       revalidate: 5,
@@ -65,6 +66,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
     props: {
       post,
       preview: preview || false,
+      baseBlogUrl: BASE_BLOG_URL,
     },
     revalidate: 10,
   }
@@ -85,7 +87,7 @@ export async function getStaticPaths() {
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
 
-const RenderPost = ({ post, redirect, preview }) => {
+const RenderPost = ({ post, redirect, preview, baseBlogUrl }) => {
   const router = useRouter()
 
   let listTagName: string | null = null
@@ -154,7 +156,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       )}
       <div className={blogStyles.mainContainer}>
         <div className={blogStyles.sideShareButtonsContainer} >
-          <ShareButtons text={post.Page} url={router.basePath + router.asPath}/>
+          <ShareButtons text={post.Page} url={baseBlogUrl + router.asPath}/>
         </div>
         <div className={blogStyles.post}>
           {post.Date && (

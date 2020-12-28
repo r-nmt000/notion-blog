@@ -3,6 +3,7 @@ const path = require('path')
 const {
   NOTION_TOKEN,
   BLOG_INDEX_ID,
+  BASE_BLOG_URL,
 } = require('./src/lib/notion/server-constants')
 
 try {
@@ -38,6 +39,13 @@ if (!BLOG_INDEX_ID) {
   warnOrError(
     `\nBLOG_INDEX_ID is missing from env, this will result in an error\n` +
       `Make sure to provide one before starting Next.js`
+  )
+}
+
+if (!BASE_BLOG_URL) {
+  warnOrError(
+    `\nBASE_BLOG_URL is missing from env, this will result in an error\n` +
+    `Make sure to provide one before starting Next.js`
   )
 }
 

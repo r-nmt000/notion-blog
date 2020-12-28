@@ -19,10 +19,12 @@ const NOTION_TOKEN = process.env.NOTION_TOKEN
 const BLOG_INDEX_ID = normalizeId(process.env.BLOG_INDEX_ID)
 const API_ENDPOINT = 'https://www.notion.so/api/v3'
 const BLOG_INDEX_CACHE = path.resolve('.blog_index_data')
+const BASE_BLOG_URL = process.env.BASE_BLOG_URL
 
 module.exports = {
   NOTION_TOKEN,
   BLOG_INDEX_ID,
   API_ENDPOINT,
   BLOG_INDEX_CACHE,
+  BASE_BLOG_URL,
 }
