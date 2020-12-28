@@ -13,7 +13,7 @@ type Props = {
   url: string
 }
 
-const ShareButtons = ({ text, url }: Props) => {
+const LeftSideShareButtons = ({ text, url }: Props) => {
   return (
     <>
       <ul>
@@ -42,4 +42,4 @@ const ShareButtons = ({ text, url }: Props) => {
   )
 }
 
-export default ShareButtons
+export default LeftSideShareButtons

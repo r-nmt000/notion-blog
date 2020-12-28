@@ -14,7 +14,8 @@ import getBlogIndex from '../lib/notion/getBlogIndex'
 import getNotionUsers from '../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../lib/blog-helpers'
 import { BASE_BLOG_URL } from '../lib/notion/server-constants'
-import ShareButtons from '../components/share-buttons'
+import LeftSideShareButtons from '../components/left-side-share-buttons'
+import BottomShareButtons from '../components/bottom-share-buttons'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -155,8 +156,8 @@ const RenderPost = ({ post, redirect, preview, baseBlogUrl }) => {
         </div>
       )}
       <div className={blogStyles.mainContainer}>
-        <div className={blogStyles.sideShareButtonsContainer} >
-          <ShareButtons text={post.Page} url={baseBlogUrl + router.asPath}/>
+        <div className={blogStyles.leftSideContainer} >
+          <LeftSideShareButtons text={post.Page} url={baseBlogUrl + router.asPath}/>
         </div>
         <div className={blogStyles.post}>
           {post.Date && (
@@ -427,7 +428,10 @@ const RenderPost = ({ post, redirect, preview, baseBlogUrl }) => {
             }
             return toRender
           })}
+          <hr/>
+          <BottomShareButtons text={post.Page} url={baseBlogUrl + router.asPath}/>
         </div>
+        <div className={blogStyles.rightSideContainer}></div>
       </div>
     </>
   )
