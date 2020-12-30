@@ -29,6 +29,7 @@ export default ({ titlePre = '' }) => {
         <meta name="twitter:site" content="@_ijjk" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
+        <link rel="alternate" type="application/rss+xml" title="nomolog" href="https://feed43.com/7710286011533801.xml"/>
       </Head>
       <Link href={'/'}>
         <h1><a>nomolog</a></h1>
