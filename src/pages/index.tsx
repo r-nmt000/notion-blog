@@ -13,6 +13,7 @@ import {
 import { textBlock } from '../lib/notion/renderers'
 import getNotionUsers from '../lib/notion/getNotionUsers'
 import getBlogIndex from '../lib/notion/getBlogIndex'
+import { BASE_BLOG_URL } from '../lib/notion/server-constants'
 import React from 'react'
 
 export async function getStaticProps({ preview }) {
@@ -44,12 +45,13 @@ export async function getStaticProps({ preview }) {
     props: {
       preview: preview || false,
       posts,
+      baseBlogUrl: BASE_BLOG_URL,
     },
     revalidate: 10,
   }
 }
 
-const Index = ({ posts = [], preview }) => {
+const Index = ({ posts = [], preview, baseBlogUrl }) => {
   return (
     <>
       <Header titlePre="Top"/>
@@ -71,26 +73,28 @@ const Index = ({ posts = [], preview }) => {
         {posts.map(post => {
           return (
             <div className={blogListStyles.postPreview} key={post.Slug}>
-              <h3>
-                <Link href="/[slug]" as={getBlogLink(post.Slug)}>
-                  <div className={blogStyles.titleContainer}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Draft</span>
+              <Link href="/[slug]" as={getBlogLink(post.Slug)}>
+                <a className={blogListStyles.postLink} data-post-url={baseBlogUrl + getBlogLink(post.Slug)}>
+                  <h3>
+                    <div className={blogStyles.titleContainer}>
+                      {!post.Published && (
+                        <span className={blogStyles.draftBadge}>Draft</span>
+                      )}
+                      {post.Page}
+                    </div>
+                  </h3>
+                  {post.Date && (
+                    <div className="posted">{getDateStr(post.Date)}</div>
+                  )}
+                  <p>
+                    {(!post.preview || post.preview.length === 0) &&
+                    'No preview available'}
+                    {(post.preview || []).map((block, idx) =>
+                      textBlock(block, true, `${post.Slug}${idx}`),
                     )}
-                    <a>{post.Page}</a>
-                  </div>
-                </Link>
-              </h3>
-              {post.Date && (
-                <div className="posted">{getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
+                  </p>
+                </a>
+              </Link>
             </div>
           )
         })}

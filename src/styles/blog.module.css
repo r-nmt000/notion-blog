@@ -146,6 +146,8 @@
   height: 1px;
   visibility: visible;
   border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .spacing {

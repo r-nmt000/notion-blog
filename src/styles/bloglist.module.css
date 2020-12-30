@@ -155,15 +155,20 @@
   margin-bottom: 2em;
 }
 
-.post :global(a) {
-  text-decoration: underline;
-  color: var(--accents-3);
-}
+/*.post :global(a) {*/
+/*  text-decoration: underline;*/
+/*  display: block;*/
+/*  color: var(--accents-3);*/
+/*}*/
 
-.post :global(a:hover) {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--accents-1);
+/*.post :global(a:hover) {*/
+/*  cursor: pointer;*/
+/*  text-decoration: none;*/
+/*  !*color: var(--accents-1);*!*/
+/*}*/
+
+.postLink:hover {
+  text-decoration: none;
 }
 
 .post :global(a + p) {

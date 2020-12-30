@@ -165,7 +165,7 @@ const RenderPost = ({ post, redirect, preview, baseBlogUrl }) => {
           )}
           <h1>{post.Page || ''}</h1>
 
-          <hr />
+          <hr/>
 
           {(!post.content || post.content.length === 0) && (
             <p>This post has no content</p>
